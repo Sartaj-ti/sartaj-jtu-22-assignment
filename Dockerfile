@@ -8,7 +8,8 @@ WORKDIR /code
 EXPOSE 8000
 
 # Install Python requirements using Pip.
-RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
+COPY ./requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # Copy your codebase into the Docker container.
 COPY . /code
